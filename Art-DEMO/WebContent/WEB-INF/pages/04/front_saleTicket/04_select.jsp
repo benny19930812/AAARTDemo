@@ -80,8 +80,8 @@
 			<button name="category" type="submit" value="17" class="genric-btn primary radius">演唱會</button>
 			<button name="category" type="submit" value="19" class="genric-btn primary radius">研習課程</button>
 		</form>
-		
-		
+		<li><a href="<c:url value='/04/goshoppingcart.ctrl' />"><i class="fas fa-ticket-alt" style="font-size:13px"></i></a>
+		<li><a href="<c:url value='/04/goshoppingcart.ctrl' />"><i class="fas fa-headphones-alt" style="font-size:50px"></i></a>
 		
 		搜尋結果
 		<c:set var="totalnum" value="${requestScope.totalnum}" />

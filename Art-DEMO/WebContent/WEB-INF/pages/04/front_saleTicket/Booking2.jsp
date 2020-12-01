@@ -125,7 +125,7 @@ form {
 				</tr>
 				<tr>
 					<td>電子郵件</td>
-					<td><input type="text" name="email"
+					<td><input type="email" name="email"
 						value="${sessionScope.shoppingcart.EMAIL}" required="required">
 					</td>
 				</tr>

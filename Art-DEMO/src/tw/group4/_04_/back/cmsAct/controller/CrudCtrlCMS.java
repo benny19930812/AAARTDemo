@@ -1,8 +1,12 @@
 package tw.group4._04_.back.cmsAct.controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.sql.Blob;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -251,15 +256,16 @@ public class CrudCtrlCMS {
 		return IdentityFilter.loginID+"04/cms_Act/UpdateAction";
 	}
 
-	@RequestMapping(path = "/04/CMS/Update2.ctrl", method = RequestMethod.GET)
+	@RequestMapping(path = "/04/CMS/Update2.ctrl", method = RequestMethod.POST)
 	public String processUpdate2(int actno, String title, int category, String location, String locationName,
-			String mainunit, String showunit, String description, String startdate, String enddate, String page) {
+			String mainunit, String showunit, String description, String startdate, String enddate, String page,MultipartFile file) throws FileNotFoundException {
 
 		String startdate2 = startdate.replace("-", "/");
 		String enddate2 = enddate.replace("-", "/");
-
+		System.out.println(file);
+		
 		showBeanService.update(actno, title, category, location, locationName, mainunit, showunit, description,
-				startdate2, enddate2);
+				startdate2, enddate2,file);
 
 		return "redirect:/04/CMS/Category.ctrl?page=" + page + "&category=" + category;
 	}
@@ -270,9 +276,9 @@ public class CrudCtrlCMS {
 		return IdentityFilter.loginID+"04/cms_Act/InsertAction";
 	}
 
-	@RequestMapping(path = "/04/CMS/Insert.ctrl", method = RequestMethod.GET)
+	@RequestMapping(path = "/04/CMS/Insert.ctrl", method = RequestMethod.POST)
 	public String processInsert(String title, int category, String location, String locationName, String mainunit,
-			String showunit, String description, String startdate, String enddate)  {
+			String showunit, String description, String startdate, String enddate,MultipartFile file)  {
 //		System.out.println("startdate"+startdate);
 		String startdate2 = startdate.replace("-", "/");
 		String enddate2 = enddate.replace("-", "/");
@@ -287,6 +293,12 @@ public class CrudCtrlCMS {
 		showBean.setACT_DESCRIPTION(description);
 		showBean.setACT_STARTDATE(startdate2);
 		showBean.setACT_ENDDATE(enddate2);
+		try {
+			showBean.setACT_PHOTO(file.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		showBeanService.insert(showBean);
 		System.out.println("已成功新增一筆");

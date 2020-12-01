@@ -81,7 +81,7 @@ public class EmailServiceImpl {
 	}
 	
 	public  void processmailsendHTML(Shoppingcart shoppingcart) throws MessagingException {
-		
+		String detail="http://localhost:8080/Art/04/SearchOrder.ctrl";
 		//寄訂單詳細mail
 		String to =  shoppingcart.getEMAIL();
 		String subject = "訂單編號"+shoppingcart.getORDERID()+"購物詳細";
@@ -251,7 +251,7 @@ public class EmailServiceImpl {
 				"		<center style='color:#ffffff;font-family:arial, \"helvetica neue\", helvetica, sans-serif;font-size:18px;font-weight:400;'>查看詳細訂單</center>\r\n" + 
 				"	</v:roundrect></a>\r\n" + 
 				"<![endif]--> \r\n" + 
-				"                       <!--[if !mso]><!-- --><span class=\"msohide es-button-border\" style=\"border-style:solid;border-color:#00C4C6;background:#00C4C6;border-width:0px;display:inline-block;border-radius:5px;width:auto;mso-hide:all\"><a href=\"https://viewstripo.email/\" class=\"es-button\" target=\"_blank\" style=\"mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;color:#FFFFFF;border-style:solid;border-color:#00C4C6;border-width:10px 20px 10px 20px;display:inline-block;background:#00C4C6;border-radius:5px;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center\">查看詳細訂單</a></span> \r\n" + 
+				"                       <!--[if !mso]><!-- --><span class=\"msohide es-button-border\" style=\"border-style:solid;border-color:#00C4C6;background:#00C4C6;border-width:0px;display:inline-block;border-radius:5px;width:auto;mso-hide:all\"><a href=\""+detail+"\" class=\"es-button\" target=\"_blank\" style=\"mso-style-priority:100 !important;text-decoration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;color:#FFFFFF;border-style:solid;border-color:#00C4C6;border-width:10px 20px 10px 20px;display:inline-block;background:#00C4C6;border-radius:5px;font-weight:normal;font-style:normal;line-height:24px;width:auto;text-align:center\">查看詳細訂單</a></span> \r\n" + 
 				"                       <!--<![endif]--></td> \r\n" + 
 				"                     </tr> \r\n" + 
 				"                   </table></td> \r\n" + 
@@ -356,6 +356,7 @@ public class EmailServiceImpl {
 				"  </div>  \r\n" + 
 				" </body>\r\n" + 
 				"</html>";
+		
 			
 				
 		String pathToAttachment = "./QRcodeOutput/QRCode.png";	

@@ -18,7 +18,7 @@
 							<h1 class="text-white">
 								AAART Shop
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="<c:url value='/14/shopListController.ctrl' />"> Shop</a></p>
+								<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="<c:url value='/04/SearchOrder.ctrl' />"> Orderlist</a> <span class="lnr lnr-arrow-right"></span>訂單編號${requestScope.orderlist.ORDERID}</p></p>
 						</div>											
 					</div>
 				</div>

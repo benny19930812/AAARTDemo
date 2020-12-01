@@ -21,6 +21,9 @@
 }
 .sofa1 {
 	width: 60px;
+	border-width: 3px;
+	border-style: dashed;
+	border-color: #FFFFFF;
 }
 .sofademo {
 	width: 60px;
@@ -43,68 +46,11 @@
 
 
 	
-<form name="order" action="<c:url value='/04/shoppingcart.ctrl'/>" method="get">	
+<form name="order" action="<c:url value='/04/Cms/seatUpdate.ctrl'/>" method="get">	
 	<p id="ticketnum" style="display:none">${sessionScope.shoppingcart.TICKET_NUM}</p>
 	<h1>座位表</h1>
-	
-	
-	<form>
-	<input type="checkbox" class"dddd" name="dd" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked><br>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked><br>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked><br>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked><br>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked>
-	<input type="checkbox" name="" value="" checked><br>
-	</form>
+
+	<input type="hidden" value="${seat.actno}" id="seatnum" name="actno"/>
 
 	<table>
 	<tr>
@@ -112,15 +58,70 @@
 		<td id="showseat" ></td>
 	</tr>
 	<tr id="selectseattr" >
-		<td>已選擇的座位資訊 </td>
+		
 		<td id="selectseat"></td>
+ <input type="hidden" id="hideA1" name="A1" value="${seat.A1}"  />
+ <input type="hidden" id="hideA2" name="A2" value="${seat.A2}"  />
+ <input type="hidden" id="hideA3" name="A3" value="${seat.A3}"  />
+ <input type="hidden" id="hideA4" name="A4" value="${seat.A4}"  />
+ <input type="hidden" id="hideA5" name="A5" value="${seat.A5}"  />
+ <input type="hidden" id="hideA6" name="A6" value="${seat.A6}"  />
+ <input type="hidden" id="hideA7" name="A7" value="${seat.A7}"  />
+ <input type="hidden" id="hideA8" name="A8" value="${seat.A8}"  />
+ <input type="hidden" id="hideA9" name="A9" value="${seat.A9}"  />
+ <input type="hidden" id="hideA10" name="A10" value="${seat.A10}"  />
+
+ <input type="hidden" id="hideB1" name="B1" value="${seat.B1}"  />
+ <input type="hidden" id="hideB2" name="B2" value="${seat.B2}"  />
+ <input type="hidden" id="hideB3" name="B3" value="${seat.B3}"  />
+ <input type="hidden" id="hideB4" name="B4" value="${seat.B4}"  />
+ <input type="hidden" id="hideB5" name="B5" value="${seat.B5}"  />
+ <input type="hidden" id="hideB6" name="B6" value="${seat.B6}"  />
+ <input type="hidden" id="hideB7" name="B7" value="${seat.B7}"  />
+ <input type="hidden" id="hideB8" name="B8" value="${seat.B8}"  />
+ <input type="hidden" id="hideB9" name="B9" value="${seat.B9}"  />
+ <input type="hidden" id="hideB10" name="B10" value="${seat.B10}"  />
+
+
+ <input type="hidden" id="hideC1" name="C1" value="${seat.C1}"  />
+ <input type="hidden" id="hideC2" name="C2" value="${seat.C2}"  />
+ <input type="hidden" id="hideC3" name="C3" value="${seat.C3}"  />
+ <input type="hidden" id="hideC4" name="C4" value="${seat.C4}"  />
+ <input type="hidden" id="hideC5" name="C5" value="${seat.C5}"  />
+ <input type="hidden" id="hideC6" name="C6" value="${seat.C6}"  />
+ <input type="hidden" id="hideC7" name="C7" value="${seat.C7}"  />
+ <input type="hidden" id="hideC8" name="C8" value="${seat.C8}"  />
+ <input type="hidden" id="hideC9" name="C9" value="${seat.C9}"  />
+ <input type="hidden" id="hideC10" name="C10" value="${seat.C10}"  />
+
+ <input type="hidden" id="hideD1" name="D1" value="${seat.D1}"  />
+ <input type="hidden" id="hideD2" name="D2" value="${seat.D2}"  />
+ <input type="hidden" id="hideD3" name="D3" value="${seat.D3}"  />
+ <input type="hidden" id="hideD4" name="D4" value="${seat.D4}"  />
+ <input type="hidden" id="hideD5" name="D5" value="${seat.D5}"  />
+ <input type="hidden" id="hideD6" name="D6" value="${seat.D6}"  />
+ <input type="hidden" id="hideD7" name="D7" value="${seat.D7}"  />
+ <input type="hidden" id="hideD8" name="D8" value="${seat.D8}"  />
+ <input type="hidden" id="hideD9" name="D9" value="${seat.D9}"  />
+ <input type="hidden" id="hideD10" name="D10" value="${seat.D10}"  />
+
+ <input type="hidden" id="hideE1" name="E1" value="${seat.E1}"  />
+ <input type="hidden" id="hideE2" name="E2" value="${seat.E2}"  />
+ <input type="hidden" id="hideE3" name="E3" value="${seat.E3}"  />
+ <input type="hidden" id="hideE4" name="E4" value="${seat.E4}"  />
+ <input type="hidden" id="hideE5" name="E5" value="${seat.E5}"  />
+ <input type="hidden" id="hideE6" name="E6" value="${seat.E6}"  />
+ <input type="hidden" id="hideE7" name="E7" value="${seat.E7}"  />
+ <input type="hidden" id="hideE8" name="E8" value="${seat.E8}"  />
+ <input type="hidden" id="hideE9" name="E9" value="${seat.E9}"  />
+ <input type="hidden" id="hideE10" name="E10" value="${seat.E10}"  />
 
 	</tr>
-	<tr>
-		<td>已選擇座位數量</td>
-		<td id="selectnum"></td>
-		<input type="hidden" value="" id="seatnum" name="seatnum"/>
-	</tr>
+<!-- 	<tr> -->
+<!-- 		<td>已選擇座位數量</td> -->
+<!-- 		<td id="selectnum"></td> -->
+<!-- 		<input type="hidden" value="" id="seatnum" name="seatnum"/> -->
+<!-- 	</tr> -->
 	</table>
 
 
@@ -191,9 +192,10 @@
 			<td><img src="<c:url value='/images/04/sofaOff.png' />" alt="" title="" class="sofa${seat.E8}" id="E8" ></td>
 			<td><img src="<c:url value='/images/04/sofaOff.png' />" alt="" title="" class="sofa${seat.E9}" id="E9" ></td>
 			<td><img src="<c:url value='/images/04/sofaOff.png' />" alt="" title="" class="sofa${seat.E10}" id="E10" ></td>
-
+			
 		</tr>
 	</table>
+		
 	<br>
 	<br>
 	<table>
@@ -203,7 +205,7 @@
 		</tr>
 	</table>
 	
-	<br><br><input type="submit" id="submit" class="genric-btn primary-border radius" value="下一步" onclick="checknum()">
+	<br><br><input type="submit" id="submit" class="btn btn-outline-info" value="修改座位" onclick="return update()">
 	</form>
 </div>
 
@@ -217,7 +219,7 @@
  	 $(".sofa1").attr("src", "<c:url value='/images/04/sofa.png' />");
 
  	    //點擊更換圖片 利用圖片src的value來判斷 		
- 	    $(".sofa").mouseover(function() {
+ 	    $(".sofa,.sofa1").mouseover(function() {
  	 	    //顯示選取框
 			$(this).css("border-color", "#FFAC55");
 			//顯示已選座位數量
@@ -226,28 +228,30 @@
  			//隱藏選取框
  			$(this).css("border-color", "#FFFFFF")
  		}).click(function() {
- 			//座位數量大於4無法選取(換圖片)
- 			if ($(this).attr("src") == "<c:url value='/images/04/sofa.png' />" ) {
+ 			if ($(this).attr("src") == "<c:url value='/images/04/sofaOff.png' />" ) {
  	 			//換成選取座位圖
- 				$(this).attr("src", "<c:url value='/images/04/sofaOff.png' />")		 					
-				
+ 				$(this).attr("src", "<c:url value='/images/04/sofa.png' />")		 									
+
+ 				var id ="hide"+$(this).attr('id');
+ 				$("#"+id).attr('value','1');
+		
  			}else {
  	 			//換回空位
- 				$(this).attr("src", "<c:url value='/images/04/sofa.png' />")
+ 				$(this).attr("src", "<c:url value='/images/04/sofaOff.png' />")
+ 				var id ="hide"+$(this).attr('id');
+ 				$("#"+id).remove();
  			}
  		});    	
 
 
- 	   $("#submit").click(function(){
- 		  	var selectnum = $(".seat").length;
-			var ticketnum = parseInt($("#ticketnum").text());
-			var notselect=ticketnum-selectnum;
-			if (selectnum < ticketnum ) {
-				alert("尚有"+notselect+"個座位未劃位");
- 	           return false;
- 	        }
- 	  }); 
-
+ 	   function update() {
+			var msg = "確認是否更新?";
+			if (confirm(msg) == true) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 
 		</script> 
 

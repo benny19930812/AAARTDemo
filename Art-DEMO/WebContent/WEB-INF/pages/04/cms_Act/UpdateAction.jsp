@@ -18,7 +18,7 @@ white-space:pre-wrap;
 <%-- 	<jsp:include page="/fragment/top.jsp" /> --%>
 		<br>
 		<br>
-	<form method=GET action="<c:url value='Update2.ctrl'/>">
+	<form method=POST action="<c:url value='Update2.ctrl'/>" enctype="multipart/form-data">
 <div class="form-group">
 		<div class="container">
 	<h1>活動修改</h1>
@@ -126,7 +126,7 @@ white-space:pre-wrap;
 				</tr>
 				<tr>
 					<td>圖片上傳</td>
-					<td><Input Type="File" Name="file">
+					<td><Input Type="File" Name="file" >
 					
 					</td>
 				</tr>
@@ -141,7 +141,7 @@ white-space:pre-wrap;
 	
 	
 		<script>
-		function insert() {
+		function update() {
 			var msg = "確認是否更新?";
 			if (confirm(msg) == true) {
 				return true;

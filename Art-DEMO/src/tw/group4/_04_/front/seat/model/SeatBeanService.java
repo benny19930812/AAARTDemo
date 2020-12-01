@@ -29,9 +29,9 @@ public class SeatBeanService {
 	}
 
 	// 修改
-	public SeatBean update(int actno ) {
-		return seatBeanDAO.update(actno);
-	}
+//	public SeatBean update(int actno ) {
+//		return seatBeanDAO.update(actno);
+//	}
 
 	// 刪除
 	public boolean delete(int actno) {;
@@ -76,6 +76,69 @@ public class SeatBeanService {
 	public Boolean delete1Seat(String[] seats,String actno) {
 		
 		return seatBeanDAO.delete1Seat(seats,actno);
+	}
+	
+	public SeatBean update(
+			 Integer actno,
+			 Integer A1,
+			 Integer A2,
+			 Integer A3,
+			 Integer A4,
+			 Integer A5,
+			 Integer A6,
+			 Integer A7,
+			 Integer A8,
+			 Integer A9,
+			 Integer A10,
+			 Integer B1,
+			 Integer B2,
+			 Integer B3,
+			 Integer B4,
+			 Integer B5,
+			 Integer B6,
+			 Integer B7,
+			 Integer B8,
+			 Integer B9,
+			 Integer B10,
+			 Integer C1,
+			 Integer C2,
+			 Integer C3,
+			 Integer C4,
+			 Integer C5,
+			 Integer C6,
+			 Integer C7,
+			 Integer C8,
+			 Integer C9,
+			 Integer C10,
+			 Integer D1,
+			 Integer D2,
+			 Integer D3,
+			 Integer D4,
+			 Integer D5,
+			 Integer D6,
+			 Integer D7,
+			 Integer D8,
+			 Integer D9,
+			 Integer D10,
+			 Integer E1,
+			 Integer E2,
+			 Integer E3,
+			 Integer E4,
+			 Integer E5,
+			 Integer E6,
+			 Integer E7,
+			 Integer E8,
+			 Integer E9,
+			 Integer E10) {
+		
+		return seatBeanDAO.update(
+				actno,
+				A1,	A2,	A3,	A4,	A5,	A6,	A7,	A8,	A9,	A10,
+				B1,	B2,	B3,	B4,	B5,	B6,	B7,	B8,	B9,	B10,
+				C1,	C2,	C3,	C4,	C5,	C6,	C7,	C8,	C9,	C10,
+				D1,	D2,	D3,	D4,	D5,	D6,	D7,	D8,	D9,	D10,
+				E1,	E2,	E3,	E4,	E5,	E6,	E7,	E8,	E9,	E10
+				);
 	}
 
 }

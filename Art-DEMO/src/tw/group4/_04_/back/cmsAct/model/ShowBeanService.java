@@ -1,5 +1,7 @@
 package tw.group4._04_.back.cmsAct.model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -8,6 +10,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -84,10 +87,10 @@ public class ShowBeanService {
 
 
 	public ShowBean update(int actno, String title, int category, String location, String locationName,
-			String mainunit, String showunit, String description, String startdate, String enddate) {	
+			String mainunit, String showunit, String description, String startdate, String enddate,MultipartFile file) throws FileNotFoundException {	
 		
 		return SDao.update(actno,title,category,location,locationName,
-				mainunit,showunit,description,startdate,enddate);
+				mainunit,showunit,description,startdate,enddate,file);
 	}
 
 	public boolean delete(int actid) {	

@@ -16,6 +16,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 @Repository("showBeanDao")
 public class ShowBeanDAO {
@@ -222,11 +223,12 @@ public class ShowBeanDAO {
 
 	// 修改
 	public ShowBean update(int actno, String title, int category, String location, String locationName, String mainunit,
-			String showunit, String description, String startdate, String enddate) {
+			String showunit, String description, String startdate, String enddate,MultipartFile file){
 
 		Session session = sessionFacory.getCurrentSession();
 		ShowBean showBean = session.get(ShowBean.class, actno);
-
+		
+		
 		if (showBean != null) {
 			showBean.setACT_TITLE(title);
 			showBean.setACT_CATEGORY(category);
@@ -236,6 +238,12 @@ public class ShowBeanDAO {
 			showBean.setACT_DESCRIPTION(description);
 			showBean.setACT_STARTDATE(startdate);
 			showBean.setACT_ENDDATE(enddate);
+			try {
+				showBean.setACT_PHOTO(file.getBytes());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 
 		return showBean;
@@ -279,5 +287,20 @@ public class ShowBeanDAO {
 		return query.list();
 
 	}
+	//file2byte[]方法
+	private static byte[] readFileToByteArray(File file){
+	    FileInputStream fis = null;
+	    // Creating a byte array using the length of the file
+	    // file.length returns long which is cast to int
+	    byte[] bArray = new byte[(int) file.length()];
+	    try{
+	      fis = new FileInputStream(file);
+	      fis.read(bArray);
+	      fis.close();                   
+	    }catch(IOException ioExp){
+	      ioExp.printStackTrace();
+	    }
+	    return bArray;
+	  }
 
 }
