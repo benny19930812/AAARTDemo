@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>確認訂單資訊</title>
+    <link rel="stylesheet" href="<c:url value='/frontstyle/css/processbar.css' />"> 
     <style>
         td {
             width: 100px;
@@ -55,32 +56,38 @@
 	<!-- End banner Area -->
 
 <div class="container">
-<div class="d-flex justify-content-center">
-<br><br><table>
-	<tr >
-		<td class="progressbar">Step 1</td>
-		<td class="progressbar">Step 2</td>
-		<td class="progressbar">Step 3</td>
-		<td class="progressbar">Step 4</td>
-	</tr>
-	<tr>
-	<td  colspan="4" style="width: 50%">
-		<div class="progress">
-<!-- 		28  -->
-		<a class="process-wizard-dot"></a>
-  		<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 78%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-		</div>
-	</td>
 
-	</tr>
-	<tr>
-		<td>區域/張數</td>
-		<td>劃位</td>
-		<td>購票確認</td>
-		<td>完成訂購</td>
-	</tr>
-	</table><br><br>
-</div>
+<div class="row bs-wizard" style="border-bottom:0;">
+                    
+                    <div class="col-lg-3 bs-wizard-step start"><!-- start -->
+                      <div class="text-center bs-wizard-stepnum">Step 1</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">區域/張數</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step complet"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 2</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">劃位</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step active"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 3</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="#" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">購票確認</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step disabled"><!-- active -->
+                      <div class="text-center bs-wizard-stepnum">Step 4</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="#" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">完成訂購</div>
+                    </div>
+                </div>
+
 
 <form name="order2" action="<c:url value='/04/SaveCart.ctrl'/> " method="get">
     
@@ -147,12 +154,19 @@
      
     </form>
           <input type="button" value="修改訂單" name="" class="genric-btn primary-border radius" id="" onclick="history.back()">  
-          <input type="submit" value="送出訂單" name="1" class="genric-btn primary-border radius" id="1">  
+          <input type="submit" value="送出訂單" name="" class="genric-btn primary-border radius" id="order">  
+<!--           <input type="submit" value="測試" name="1" class="genric-btn primary-border radius" id="TEST">   -->
 </div>
     
 <script src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
 </script>
+<!-- sweetalert1 -->
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
+<!--  sweetalert2 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+
 
 <script>
 $(document).ready(		
@@ -165,9 +179,43 @@ $(document).ready(
 					}					 
 				});
 
-</script>
 
-    <script>
+document.querySelector('#order').onclick = function(){
+	swal({
+		  title: "是否送出訂單?",
+		  text: "訂單即將成立!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((orderOK) => {
+			  if (orderOK) {
+			    swal("訂單已成立!", 
+			    	{icon: "success",});
+		    	setTimeout(function(){window.location="<c:url value='/04/SaveCart.ctrl'/>" ; },2000);
+			  } else {
+			    swal("訂單已取消!");
+			  }
+			});
+};
+
+
+// .then((value) => {
+//     switch (value) {
+//       case "danger":
+//     	swal("提示","商品已刪除", "success")
+//     	setTimeout(function(){window.location="<c:url value='/14/deleteProduct.ctrl?productId="+pid+"'/>" ; },2000);
+//         break;
+//       case "不是":
+//         swal("提示","商品未刪除", "info");
+//         break;
+//       default:
+//     	  swal("提示","商品未刪除", "info");
+//         break;
+//     }
+//   });
+
+    
 
     $("#1").click(function () {
     	if (confirm("是否送出訂單? ")) {
@@ -178,7 +226,7 @@ $(document).ready(
     	
     })
 
-    </script>
+</script>
 
 </body>
 

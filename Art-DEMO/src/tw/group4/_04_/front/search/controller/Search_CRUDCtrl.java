@@ -181,7 +181,7 @@ public class Search_CRUDCtrl {
 				byte[] photo =showBean.getACT_PHOTO();
 //				圖片byteArray透過Base64轉字串，輸出到html
 		        String Photoencode = Base64.encodeBase64String(photo);
-				System.out.println(photo);
+		
 
 				Map map = new HashMap();
 				map.put("no", noint);

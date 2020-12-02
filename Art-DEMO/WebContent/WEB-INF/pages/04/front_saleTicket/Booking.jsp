@@ -8,13 +8,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>節目內容</title>
+<link rel="stylesheet" href="<c:url value='/frontstyle/css/processbar.css' />"> 
 <style>
 td {
-	width: 100px;
+
 }
 
 .ticketnum {
-	width: 30px;
+	width: 20px;
 }
 
 .adultnum {
@@ -40,6 +41,14 @@ td {
 .price2 {
 	width: 200px;
 }
+.genric-btn success medium{
+width: 100px;
+}
+.num{
+width: 150px;
+}
+
+
 
 </style>
 
@@ -56,44 +65,78 @@ td {
 							<h1 class="text-white">
 								AAART Shop
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="<c:url value='' />"> Shop</a></p>
+							<p class="text-white link-nav"><a href="<c:url value='/index.html' />">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="<c:url value='' />"> Shop</a></p>
 						</div>											
 					</div>
 				</div>
 			</section>
 	<!-- End banner Area -->
+	
+	
 
  
 <div class="container">
+
+<div class="row bs-wizard" style="border-bottom:0;">
+                    
+                    <div class="col-lg-3 bs-wizard-step start"><!-- start -->
+                      <div class="text-center bs-wizard-stepnum">Step 1</div>
+                      <div class="progress"><div class="progress-bar" style="width:0%;"></div></div>
+                      <a href="<c:url value='/04/booking.ctrl'/>" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">區域/張數</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step complet"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 2</div>
+                      <div class="progress"><div class="progress-bar" ></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">劃位</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step active"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 3</div>
+                      <div class="progress"><div class="progress-bar"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">購票確認</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step disabled"><!-- active -->
+                      <div class="text-center bs-wizard-stepnum">Step 4</div>
+                      <div class="progress"><div class="progress-bar"></div></div>
+                      <a href="#" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">完成訂購</div>
+                    </div>
+                </div>
+
 <div class="d-flex justify-content-center">
 
-	<table>
-	<tr >
-		<td class="progressbar">Step 1</td>
-		<td class="progressbar">Step 2</td>
-		<td class="progressbar">Step 3</td>
-		<td class="progressbar">Step 4</td>
+<!-- 	<table> -->
+<!-- 	<tr > -->
+<!-- 		<td class="progressbar">Step 1</td> -->
+<!-- 		<td class="progressbar">Step 2</td> -->
+<!-- 		<td class="progressbar">Step 3</td> -->
+<!-- 		<td class="progressbar">Step 4</td> -->
 		
-	</tr>
-	<tr>
-	<td  colspan="4" style="width: 50%">
-		<div class="progress">
-<!-- 		28  -->
-		<a class="process-wizard-dot"></a>
-  		<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 3%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-		</div>
-	</td>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 	<td  colspan="4" style="width: 50%"> -->
+<!-- 		<div class="progress"> -->
+<!-- <!-- 		28  --> 
+<!-- 		<a class="process-wizard-dot"></a> -->
+<!--   		<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 3%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+<!-- 		</div> -->
+<!-- 	</td> -->
 
-	</tr>
-	<tr>
-		<td>區域/張數</td>
-		<td>劃位</td>
-		<td>購票確認</td>
-		<td>完成訂購</td>
+<!-- 	</tr> -->
+<!-- 	<tr> -->
+<!-- 		<td>區域/張數</td> -->
+<!-- 		<td>劃位</td> -->
+<!-- 		<td>購票確認</td> -->
+<!-- 		<td>完成訂購</td> -->
 		
-	</tr>
-	</table><br>
-</div>
+<!-- 	</tr> -->
+<!-- 	</table><br> -->
+<!-- </div> -->
 
 
 
@@ -120,44 +163,55 @@ td {
 				<td>票種</td>
 				<td>座位</td>
 				<td>票價</td>
-				<td>數量</td>
+				<td class="num">數量</td>
 
 			</tr>
 			<tr> 
 				<td class="title">${sessionScope.title}</td>
 				<td>
 <!-- 				<div class="default-select" id="default-select" > -->
-										
-				<select id="ticketcategry" name="ticketcategry" class=""  >
+				
+				<div class="row d-flex justify-content-center" style="text-align: center;">
+				<div class="default-select mb-10" id="default-select">
+		
+					<select id="ticketcategry">
 					<option value="全票">全票</option>
-					<option value="半票">半票</option>
-				</select>
+					<option value="半票">半票</option>						
+					</select>
+				</div>
+			</div>
+						
+<!-- 				<select id="ticketcategry" name="ticketcategry" class=""  > -->
+<!-- 					<option value="全票">全票</option> -->
+<!-- 					<option value="半票">半票</option> -->
+<!-- 				</select> -->
 <!-- 									</div> -->
 				</td>
 				<td>自行劃位</td>
 				<td id="price">NT$2000</td>
-				<td><input type="button" value="-" name="minus" class="" id="minus"> 					
-					<input type="text" name="ticketnum" id="ticketnum" class="ticketnum"value="" readonly="readonly"> 
-					<input type="button" value="+" name="plus" class="" id="plus">
+				<td>				
+				<input type="button" value="+" name="plus" class="genric-btn success medium" id="plus">
+				<input type="text" name="ticketnum" id="ticketnum" class="single-input"value="" readonly="readonly"> 
+				<input type="button" value="-" name="minus" class="genric-btn success medium" id="minus" "> 					
+				
 				</td>
 			</tr>
 
 		</table>
 
-		<div class="g-recaptcha" data-sitekey="6Lc94vEZAAAAAMs-vGxyGUXuXB3jucfpLckJTfsC"></div>
+<!-- 		<div class="g-recaptcha" data-sitekey="6Lc94vEZAAAAAMs-vGxyGUXuXB3jucfpLckJTfsC"></div> -->
 
 		
 		<br> <input type="submit" value="確認數量" name="submit"
 			class="genric-btn primary-border radius" id="submit">
 		
-
 	</form>
 	</div>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
- 
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  	 
 	<script>
 	$(document).ready(		
@@ -204,7 +258,7 @@ td {
 			}); 
 
 		})
-
+		
 	</script>
 
 </body>

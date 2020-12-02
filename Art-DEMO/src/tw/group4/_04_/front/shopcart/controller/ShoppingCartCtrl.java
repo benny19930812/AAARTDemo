@@ -125,11 +125,12 @@ public class ShoppingCartCtrl {
 
 		return IdentityFilter.loginID + "04/front_saleTicket/Booking2";
 	}
-
+	//清空購物車
 	@RequestMapping(path = "/04/delectCart.ctrl", method = RequestMethod.GET)
 	public String delectCart(Model model, HttpSession session, HttpServletRequest Request) {
 		// 移除shoppingcart
 		session.removeAttribute("shoppingcart");
+		session.removeAttribute("shoppingcartnum");
 
 		return IdentityFilter.loginID + "04/front_saleTicket/Booking2";
 	}

@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>訂單</title>
+<style type="text/css">
+.do{
+width: 200px;
+}
+</style>
 </head>
 <body>
 
@@ -34,7 +39,7 @@
 				<th class="">訂購數量</th>
 				<th class="">總金額</th>
 				<th class="">付款狀況</th>
-				<th class="">操作</th>
+				<th class="do">操作</th>
 			</tr>
 
 			<%--使用JSTL 執行for loop ${show.no}取map內value --%>

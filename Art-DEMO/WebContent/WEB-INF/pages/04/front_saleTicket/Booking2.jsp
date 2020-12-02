@@ -11,6 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>購物車</title>
+<link rel="stylesheet" href="<c:url value='/frontstyle/css/processbar.css' />"> 
 <style>
 td {
 	width: 100px;
@@ -51,6 +52,13 @@ td {
 form {
 	display: inline;
 }
+
+
+
+
+
+
+
 </style>
 
 </head>
@@ -65,7 +73,7 @@ form {
 				<div class="about-content col-lg-12">
 					<h1 class="text-white">AAART Shop</h1>
 					<p class="text-white link-nav">
-						<a href="index.html">Home </a> <span class="lnr lnr-arrow-right"></span>
+						<a href="<c:url value='/index.html' />">Home </a> <span class="lnr lnr-arrow-right"></span>
 						<a href="<c:url value='/14/shopListController.ctrl' />"> Shop</a>
 					</p>
 				</div>
@@ -74,43 +82,46 @@ form {
 	</section>
 	<!-- End banner Area -->
 
-	<%-- <form name="order2" action="<c:url value='/04/shoppingcart2.ctrl'/> " method="get"> --%>
-
-
 
 	<div class="container">
-		<div class="d-flex justify-content-center">
-			<br>
-			<br>
-			<table>
-				<tr>
-					<td class="progressbar">Step 1</td>
-					<td class="progressbar">Step 2</td>
-					<td class="progressbar">Step 3</td>
-					<td class="progressbar">Step 4</td>
-				</tr>
-				<tr>
-					<td colspan="4" style="width: 50%">
-						<div class="progress">
-							<!-- 		28  -->
-							<a class="process-wizard-dot"></a>
-							<div class="progress-bar progress-bar-striped bg-info"
-								role="progressbar" style="width: 53%" aria-valuenow="50"
-								aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</td>
-
-				</tr>
-				<tr>
-					<td>區域/張數</td>
-					<td>劃位</td>
-					<td>購票確認</td>
-					<td>完成訂購</td>
-				</tr>
-			</table>
-			<br>
-		</div>
-
+	
+	 <div class="row bs-wizard" style="border-bottom:0;">
+                    
+                    <div class="col-lg-3 bs-wizard-step start"><!-- start -->
+                      <div class="text-center bs-wizard-stepnum">Step 1</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">區域/張數</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step complet"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 2</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">劃位</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step active"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 3</div>
+                      <div class="progress"><div class="progress-bar"style="width: 50%;"></div></div>
+                      <a href="#" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">購票確認</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step disabled"><!-- active -->
+                      <div class="text-center bs-wizard-stepnum">Step 4</div>
+                      <div class="progress"><div class="progress-bar"></div></div>
+                      <a href="#" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">完成訂購</div>
+                    </div>
+                </div>
+            
+            
+            
+            
+            
+        </div>
+	
 		<form id="order" name="order2"
 			action="<c:url value='/04/shoppingcart2.ctrl'/> " method="get">
 			<H1>訂購人資訊</H1>
@@ -186,6 +197,7 @@ form {
 	<script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
+		 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			console.log($(".ticketcategry").text());

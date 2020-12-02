@@ -71,7 +71,8 @@ h1, h2 {
 
 					<!--    模糊查詢功能 -->
 					<input type=TEXT name="searchString" class=""placeholder="音樂 展覽 舞蹈 台中" id="search"> <input type=SUBMIT value="查詢" class="genric-btn primary radius" id="searchbut"><br>
-
+<!-- 				<div class="row d-flex justify-content-center" style="text-align: center;"> -->
+<!-- 				<div class="default-select mb-10" id="default-select"> -->
 					<br> <select id="category" class="current" name="category">
 						<option value="" selected>分類查詢</option>
 						<option value="1">音樂</option>
@@ -90,6 +91,10 @@ h1, h2 {
 						<option value="17">演唱會</option>
 						<option value="19">研習課程</option>
 					</select> 
+				
+					
+<!-- 				<div class="row d-flex justify-content-center" style="text-align: center;"> -->
+<!-- 				<div class="default-select mb-10" id="default-select"> -->
 					<select id="searchsite" class="" name="searchsite">
 						<option value="" selected>地區查詢</option>
 						<option value="">==北部地區==</option>
@@ -115,6 +120,7 @@ h1, h2 {
 						<option value="台東">台東</option>
 
 					</select> 
+					
 					<input placeholder="開始日查詢" class="textbox-n" type="text"
 						onfocus="(this.type='date')" id="startdate" name="startdate">
 					<input placeholder="結束日查詢" class="textbox-n" type="text"

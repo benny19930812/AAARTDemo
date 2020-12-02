@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style type="text/css">
 .sofa{
 	width: 60px;
@@ -39,13 +40,13 @@
 
 
 	
-	<c:set var="seat" value="${requestScope.seat}" />
+	
 
 <div class="container">
 
 
 
-	
+<c:set var="seat" value="${requestScope.seat}" />
 <form name="order" action="<c:url value='/04/Cms/seatUpdate.ctrl'/>" method="get">	
 	<p id="ticketnum" style="display:none">${sessionScope.shoppingcart.TICKET_NUM}</p>
 	<h1>座位表</h1>
@@ -214,6 +215,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  	<script> 
  	//將已劃位的位置改為sofa.png
  	 $(".sofa1").attr("src", "<c:url value='/images/04/sofa.png' />");

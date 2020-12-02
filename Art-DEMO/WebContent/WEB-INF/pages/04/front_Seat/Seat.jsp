@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="<c:url value='/frontstyle/css/processbar.css' />"> 
 <style type="text/css">
 .sofa{
 	width: 60px;
@@ -50,36 +51,43 @@
 			</section>
 	<!-- End banner Area -->
 	
-	<c:set var="seat" value="${requestScope.seat}" />
+	
+	
 
 <div class="container">
-<div class="d-flex justify-content-center">
-<br><br><table>
-	<tr >
-		<td class="progressbar">Step 1</td>
-		<td class="progressbar">Step 2</td>
-		<td class="progressbar">Step 3</td>
-		<td class="progressbar">Step 4</td>
-	</tr>
-	<tr>
-	<td  colspan="4" style="width: 50%">
-		<div class="progress">
-<!-- 		28  -->
-		<a class="process-wizard-dot"></a>
-  		<div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 53%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-		</div>
-	</td>
 
-	</tr>
-	<tr>
-		<td>區域/張數</td>
-		<td>劃位</td>
-		<td>購票確認</td>
-		<td>完成訂購</td>
-	</tr>
-	</table><br>
-</div>
+<div class="row bs-wizard" style="border-bottom:0;">
+                    
+                    <div class="col-lg-3 bs-wizard-step start"><!-- start -->
+                      <div class="text-center bs-wizard-stepnum">Step 1</div>
+                      <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">區域/張數</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step complet"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 2</div>
+                      <div class="progress"><div class="progress-bar" style="width: 50%;"></div></div>
+                      <a href="#" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">劃位</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step active"><!-- complete -->
+                      <div class="text-center bs-wizard-stepnum">Step 3</div>
+                      <div class="progress"><div class="progress-bar"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">購票確認</div>
+                    </div>
+                    
+                    <div class="col-lg-3 bs-wizard-step disabled"><!-- active -->
+                      <div class="text-center bs-wizard-stepnum">Step 4</div>
+                      <div class="progress"><div class="progress-bar"></div></div>
+                      <a href="" class="bs-wizard-dot"></a>
+                      <div class="bs-wizard-info text-center">完成訂購</div>
+                    </div>
+                </div>
 	
+	<c:set var="seat" value="${requestScope.seat}" />
 <form name="order" action="<c:url value='/04/shoppingcart.ctrl'/>" method="get">	
 	<p id="ticketnum" style="display:none">${sessionScope.shoppingcart.TICKET_NUM}</p>
 	<h1>座位表</h1>

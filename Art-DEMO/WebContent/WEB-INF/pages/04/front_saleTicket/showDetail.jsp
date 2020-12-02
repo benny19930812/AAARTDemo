@@ -80,21 +80,21 @@ td {
 <%-- 		<c:set var="description" value="${param.description}" /> --%>
 
 
-		<H1>節目詳細 </H1>
+		<br><H1>節目詳細 </H1>
 		<br><H4>節目名稱: ${title}</H4>	
 		<br><H4>地點: ${site}</H4>		
 <!-- 		<H2>主辦單位:</H2>		 -->
 <%-- 		<H2>${}</H2> --%>
 <!-- 		<H2>演出單位:</H2>		 -->
 <%-- 		<H2>${}</H2> --%>
-		<H4>活動日期: ${startdate} ~ ${enddate}</H4>		
+		<br><H4>活動日期: ${startdate} ~ ${enddate}</H4>		
 
 		
 		
-		節目簡介:
+		<br><h4>節目簡介:</h4>
 		<P>${description}</P><br><br>
 		
-		圖片:
+		
 		<img style='display:block;width:800px;' src="data:image/jpg;base64,${photo}" >
 		
 		<br><br><iframe width="100%" height="250" frameborder="0" src="https://www.google.com/maps?q=${site}&output=embed"></iframe>

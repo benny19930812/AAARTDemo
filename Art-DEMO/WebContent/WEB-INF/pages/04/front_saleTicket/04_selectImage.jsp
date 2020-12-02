@@ -46,7 +46,7 @@
 							<h1 class="text-white">
 								AAART Shop
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="<c:url value='/14/shopListController.ctrl' />"> Shop</a></p>
+							<p class="text-white link-nav"><a href="<c:url value='/index.html' />">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="<c:url value='/14/shopListController.ctrl' />"> Shop</a></p>
 						</div>											
 					</div>
 				</div>
@@ -73,17 +73,17 @@
 			<button name="category" type="submit" value="7" class="genric-btn primary radius">講座</button>
 			<button name="category" type="submit" value="8" class="genric-btn primary radius">電影</button>
 			<button name="category" type="submit" value="11" class="genric-btn primary radius">綜藝</button>
-			<button name="category" type="submit" value="13" class="genric-btn primary radius">競賽</button>
-			<button name="category" type="submit" value="14" class="genric-btn primary radius">徵選</button>
+<!-- 			<button name="category" type="submit" value="13" class="genric-btn primary radius">競賽</button> -->
+<!-- 			<button name="category" type="submit" value="14" class="genric-btn primary radius">徵選</button> -->
 			<button name="category" type="submit" value="15" class="genric-btn primary radius">其他</button>
-			<button name="category" type="submit" value="16" class="genric-btn primary radius">科教</button>
+<!-- 			<button name="category" type="submit" value="16" class="genric-btn primary radius">科教</button> -->
 			<button name="category" type="submit" value="17" class="genric-btn primary radius">演唱會</button>
-			<button name="category" type="submit" value="19" class="genric-btn primary radius">研習課程</button>
+<!-- 			<button name="category" type="submit" value="19" class="genric-btn primary radius">研習課程</button> -->
 		</form>
 		
 		
 		
-		搜尋結果
+		
 		<c:set var="totalnum" value="${requestScope.totalnum}" />
 		<c:set var="PerPage" value="${requestScope.PerPage}" />
 		<c:set var="totalPages" value="${requestScope.totalPages}" />
@@ -92,8 +92,8 @@
 		<c:set var="page" value="${requestScope.page}" />
 		<c:set var="currentPage"
 			value="${requestScope.key_list.subList(beginIndex,endIndex)}" />
-
-		<p>總筆數:${totalnum} 每頁筆數:${PerPage} 總頁數:${totalPages} 目前位於第${page}頁</p>
+		<br><br>
+		<p>搜尋結果<br>總筆數:${totalnum} 每頁筆數:${PerPage} 總頁數:${totalPages} 目前位於第${page}頁</p>
 
 		<table class="table table-bordered">
 			<tr>
