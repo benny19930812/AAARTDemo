@@ -131,25 +131,25 @@ form {
 				<tr>
 					<td>訂購人姓名</td>
 					<td><input type="text" name="name"
-						value="${sessionScope.shoppingcart.NAME}" required="required">
+						value="${sessionScope.shoppingcart.NAME}" required="required" class="single-input">
 					</td>
 				</tr>
 				<tr>
 					<td>電子郵件</td>
 					<td><input type="email" name="email"
-						value="${sessionScope.shoppingcart.EMAIL}" required="required">
+						value="${sessionScope.shoppingcart.EMAIL}" required="required" class="single-input">
 					</td>
 				</tr>
 				<tr>
 					<td>電話</td>
 					<td><input type="text" name="tel"
-						value="${sessionScope.shoppingcart.TEL}" required="required">
+						value="${sessionScope.shoppingcart.TEL}" required="required" class="single-input">
 					</td>
 				</tr>
 				<tr>
 					<td>地址</td>
 					<td><input type="text" name="add"
-						value="${sessionScope.shoppingcart.ADDRESS}" required="required">
+						value="${sessionScope.shoppingcart.ADDRESS}" required="required" class="single-input">
 					</td>
 				</tr>
 			</table>

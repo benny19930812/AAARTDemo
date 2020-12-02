@@ -3,6 +3,7 @@ package tw.group4._04_.front.seat.model;
 import java.util.Map;
 
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,8 @@ public class SeatBeanService {
 	}
 
 	// 新增
-	public SeatBean insert(SeatBean SeatBean) {
-		return seatBeanDAO.insert(SeatBean);
+	public SeatBean insert(SeatBean seatBean) {
+		return seatBeanDAO.insert(seatBean);
 	}
 
 	// 查詢
@@ -139,6 +140,12 @@ public class SeatBeanService {
 				D1,	D2,	D3,	D4,	D5,	D6,	D7,	D8,	D9,	D10,
 				E1,	E2,	E3,	E4,	E5,	E6,	E7,	E8,	E9,	E10
 				);
+	}
+	
+	public String search1seat(String seat, int actno) {
+
+		
+		return seatBeanDAO.search1seat(seat, actno);
 	}
 
 }

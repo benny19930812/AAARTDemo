@@ -36,6 +36,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import tw.group4._04_.back.cmsAct.model.ShowBean;
 import tw.group4._04_.back.cmsAct.model.ShowBean2;
 import tw.group4._04_.back.cmsAct.model.ShowBeanService;
+import tw.group4._04_.front.seat.model.SeatBean;
+import tw.group4._04_.front.seat.model.SeatBeanService;
 import tw.group4.util.IdentityFilter;
 
 @Controller
@@ -50,6 +52,11 @@ public class CrudCtrlCMS {
 	
 	@Autowired
 	private ShowBeanService showBeanService;
+	
+	@Autowired
+	private SeatBean seatbean;
+	@Autowired
+	private SeatBeanService seatBeanService;
 
 	int pageNo = 0;
 	// @ModelAttribute設定傳入參數
@@ -299,9 +306,15 @@ public class CrudCtrlCMS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		showBeanService.insert(showBean);
+		
+		int actid=showBeanService.insert(showBean);
+		System.out.println(actid);
+		//新增圖片
+		seatbean.setaCT_NO(actid);
+		seatBeanService.insert(seatbean);
 		System.out.println("已成功新增一筆");
+		
+		
 //		return "04/categorySearch";
 		return "redirect:/04/CMS/Category.ctrl?page=&category=" + category;
 	}

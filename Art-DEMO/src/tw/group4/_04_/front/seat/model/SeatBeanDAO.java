@@ -363,6 +363,15 @@ public class SeatBeanDAO {
 
 		return false;
 	}
+	//查詢單座位
+	public String search1seat(String seat, int actno) {
+
+		Session session = sessionFacory.getCurrentSession();
+		Query query = session.createQuery("select st.+"+seat+" from SEAT as st where st.ACT_NO="+actno);
+		String result=query.getQueryString();
+
+		return result;
+	}
 
 	
 }

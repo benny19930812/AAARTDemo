@@ -47,12 +47,12 @@ public class ShowBeanDAO {
 //	}
 
 	// 新增
-	public ShowBean insert(ShowBean showbean) {
+	public int insert(ShowBean showbean) {
 		Session session = sessionFacory.getCurrentSession();
 //		ShowBean resultBean = session.get(ShowBean.class, showbean.getACT_NO());
 //		if (resultBean == null) {
-		session.save(showbean);
-		return showbean;
+		int id=(int) session.save(showbean);
+		return id;
 //		}
 //		return null;
 	}

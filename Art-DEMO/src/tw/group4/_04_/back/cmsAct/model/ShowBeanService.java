@@ -32,7 +32,7 @@ public class ShowBeanService {
 	}
 	
 
-	public ShowBean insert(ShowBean showbean) {		
+	public int  insert(ShowBean showbean) {		
 		return SDao.insert(showbean);
 	}
 

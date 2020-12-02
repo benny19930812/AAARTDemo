@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -54,5 +55,30 @@ public class SeatCrud {
 		model.addAttribute("seat", seatMap);
 		return IdentityFilter.loginID+"04/front_Seat/Seat";
 	}
+	
+//	//電腦選位
+//		@RequestMapping(path = "/04/.ctrl", method = RequestMethod.GET)
+//		public String radomSeat(Model model, HttpSession session, HttpServletRequest Request) {
+//			
+//			for (int j = 0; j < 3; j++) {
+//				
+//				char Alphabet=(char)(int)(Math.random()*5+65);		
+//				Random random = new Random();
+//				String num = "";
+//				for (int i = 1; i < 2; i++) {
+//					num += random.nextInt(10)+1;
+//				}
+//				String rString=Alphabet+num;
+//				System.out.println(rString);
+//				}
+//			
+//			seatBeanService.search1seat(seat, actno);
+//			
+//			if (member == null) {
+//				return "redirect:/35/loginEntry";
+//			} else {	
+//				return IdentityFilter.loginID + "04/front_saleTicket/Booking2";
+//			}
+//		}
 
 }
