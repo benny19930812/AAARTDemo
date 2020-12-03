@@ -311,6 +311,7 @@ public class CrudCtrlCMS {
 		System.out.println(actid);
 		//新增圖片
 		seatbean.setaCT_NO(actid);
+		seatbean.setACT_TITLE(title);
 		seatBeanService.insert(seatbean);
 		System.out.println("已成功新增一筆");
 		

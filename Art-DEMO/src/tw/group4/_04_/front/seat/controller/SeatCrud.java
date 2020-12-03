@@ -74,11 +74,11 @@ public class SeatCrud {
 //			
 //			seatBeanService.search1seat(seat, actno);
 //			
-//			if (member == null) {
-//				return "redirect:/35/loginEntry";
-//			} else {	
+////			if (member == null) {
+////				return "redirect:/35/loginEntry";
+////			} else {	
 //				return IdentityFilter.loginID + "04/front_saleTicket/Booking2";
-//			}
+////			}
 //		}
 
 }
