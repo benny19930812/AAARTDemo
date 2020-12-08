@@ -176,8 +176,8 @@ public class ShoppingCartCtrl {
 		//寄訂單詳細mail
 		emailServiceImpl.processmailsendHTML(shoppingcart);
 			
-		model.addAttribute("orderlistID", orderlistID);
-		model.addAttribute("email", shoppingcart.getEMAIL());
+//		model.addAttribute("orderlistID", orderlistID);
+//		model.addAttribute("email", shoppingcart.getEMAIL());
 		session.setAttribute("orderlistID", orderlistID);
 		session.setAttribute("email", shoppingcart.getEMAIL());
 
@@ -187,13 +187,13 @@ public class ShoppingCartCtrl {
 		Date today = new Date();
 		String dateString = sdFormat.format(today);
 		Integer totalAmount =shoppingcart.getTOTALPRICE();
+		String title =shoppingcart.getTITLE();
+		System.out.println(title);
 		String genAioCheckOutALL = payment.genAioCheckOutALL(dateString, Integer.toString(totalAmount));
 
 
 		session.setAttribute("form", genAioCheckOutALL);
-		
-		
-		
+
 		
 		//清空購物車,未購數量
 		session.removeAttribute("shoppingcart");

@@ -15,7 +15,7 @@ public class QRCodeToolTest {
 // 二維碼字串
 		String qrCodeData = "https://www.google.com/";
 // 二維碼名稱
-		String filePath = "QRcodeOutput/QRCodeTest.png";
+		String filePath = "WebContent/WEB-INF/pages/images/04/QRcodeOutput/QRCode.png";
 // 字元編碼
 		String charset = "UTF-8"; // "ISO-8859-1"
 		Map hintMap = new HashMap();

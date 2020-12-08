@@ -140,8 +140,7 @@ Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
 				<br><br><input type="submit" class="genric-btn primary-border radius" value="購買">
 
 		</form>
-		
-		
+
 </body>
 
 </html>

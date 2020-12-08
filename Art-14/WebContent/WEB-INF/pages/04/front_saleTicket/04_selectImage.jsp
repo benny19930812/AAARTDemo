@@ -133,7 +133,7 @@
 					<td>
 <%-- 					<a href="javascript:;" onclick="document.getElementById('form${show.no}').submit();"> --%>
 					<a href="<c:url value='/04/showDetail.ctrl?actid=${show.no}'/>">
-					<img style='display:block;width:200px;height:200px;' src="data:image/jpg;base64,${show.photo}" class="actimg" >
+					<img style='display:block;width:200px;' src="data:image/jpg;base64,${show.photo}" class="actimg" >
 					</a>
 					</td>
 					<td>${show.startdate}~ ${show.enddate}</td>

@@ -14,9 +14,9 @@ public class BlobInsertAction {
 		JDBCDAO jdbcdao = new JDBCDAO();
 
 //		1.表格
-//		jdbcdao.InsertBLOB();
-		jdbcdao.dropTableOL();
-		jdbcdao.createTableOL();
+		jdbcdao.InsertBLOB();
+//		jdbcdao.dropTableOL();
+//		jdbcdao.createTableOL();
 		
 
 	}

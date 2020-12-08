@@ -7,9 +7,10 @@
 <meta charset="UTF-8">
 <title>訂單</title>
 <style type="text/css">
-form {
-	display: inline;
+form{
+display:inline;
 }
+
 
 </style>
 </head>
@@ -31,34 +32,37 @@ form {
 			</section>
 	<!-- End banner Area -->
 
-<div class="container">
+<form name="order" action="<c:url value='/04/Cms/UpdateOrderlist2.ctrl'/> " method="get">
  <br><br><H1>訂購人資訊</H1>
     <table class= "table table-bordered">
         <tr>
             <td>訂購人姓名
             </td>
-            <td>${requestScope.orderlist.NAME}</td>
+            <td>
+			<input type="text" value="${requestScope.orderlist.NAME}" name="name"/>
+           </td>
         </tr>
         <tr>
             <td>電子郵件
             </td>
             <td>
-             ${requestScope.orderlist.EMAIL}
-             </td>
+            <input type="text" value="${requestScope.orderlist.EMAIL}" name="email"/>             
+            </td>
         </tr>
         <tr>
             <td>電話
             </td>
             <td>
-            
-             ${requestScope.orderlist.TEL}
+            <input type="text" value="${requestScope.orderlist.TEL}" name="tel"/>                          
             </td>
         </tr>
         <tr>
             <td>地址
             </td>
             <td>
-             ${requestScope.orderlist.ADDRESS}
+             <input type="text" value="${requestScope.orderlist.ADDRESS}" name="address"/>            
+             <input type="hidden" value="${requestScope.orderlist.ORDERPK}" name="orderPK"/>            
+          
             </td>
         </tr>
      </table><br><br> <br>  
@@ -90,25 +94,16 @@ form {
 			
 			</tr>
 			
-		</table>	
-<!-- 		修改訂單將建立一筆通知存入DB 通知管理員修改 -->
-		<form name="order" action="<c:url value=''/> " method="get"> 						
-			 <button type="button" id="change" name="orderid"  value="${requestScope.orderlist.ORDERID}" class="genric-btn success-border radius" onclick="return change()">修改訂單</button>
+		</table>		
+		 						
+			 <button type="submit" name="orderid"  value="${requestScope.orderlist.ORDERID}" class="btn btn-info" onclick="return del()">送出修改</button>
 		</form> 
-		<form name="order" action="<c:url value='/04/DeleteOrderlist.ctrl'/> " method="get"> 						
-			 <button type="button" id="cancel" name="orderid"  value="${requestScope.orderlist.ORDERID}" class="genric-btn success-border radius" onclick="return del()">取消訂單</button>
-		</form> 
-</div>
 
 
-	<script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-		crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
 </script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
-
 
 <script>
 $(document).ready(		
@@ -121,18 +116,15 @@ $(document).ready(
 					}					 
 				});
 
-//      function change() {
-// 		var msg = "將通知管理員進行修改";
-// 		if (confirm(msg) == true) {
-// 			return true;
-// 		} else {
-// 			return false;
-// 		}
-// 	}
+    $("#update").click(function () {
+    	
+    		window.location ="<c:url value='/_04_Orderlist/OrderlistUpdate.jsp'/>" 
+    	
+    })
     
 
     function del() {
-		var msg = "是否取消訂單";
+		var msg = "是否修改訂單";
 		if (confirm(msg) == true) {
 			return true;
 		} else {
@@ -140,30 +132,7 @@ $(document).ready(
 		}
 	}
     
-//     document.querySelector('#cancel').onclick = function(){
-//     	swal({
-//     		  title: "是否取消訂單?",
-//     		  text: "訂單即將取消!",
-//     		  icon: "warning",
-//     		  buttons: true,
-//     		  dangerMode: true,
-//     		})
-//     		.then((cancelOK) => {
-//     			    $.ajax({
-//     			           type: 'GET',
-//     			           url: "<c:url value='/04/DeleteOrderlist.ctrl'/>",
-//     			           data:  {
-//     			        	   orderid: document.getElementById('cancel').value,   			             
-//     			           },
-//     			  if (cancelOK) {
-//     			    swal("訂單已取消!", 
-//     			    	{icon: "success",});
-// //     		    	setTimeout(function(){window.location="<c:url value='/04/DeleteOrderlist.ctrl'/>" ; },2000);
-//     			  } else {
-//     			    swal("動作已取消!");
-//     			  }
-//     			});
-//     };
+  
 	
     
     

@@ -93,26 +93,10 @@
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 		crossorigin="anonymous"></script>
 	</script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
-	<script>
-		$("#update")
-				.click(
-						function() {
-
-							window.location = "<c:url value='/_04_Orderlist/OrderlistUpdate.jsp'/>"
-
-						})
-
-		//     $("#delete").click(function () {
-		//     	if (confirm("確認刪除? ")) {
-		//     		window.location ="<c:url value='/_04_Orderlist/OrIdDeleteServlet'/>" 
-		//     	} else {
-		//     		return false;
-		//     	}
-
-		//     })
-	</script>
 	<script>
 		function del() {
 			var msg = "是否取消?";
@@ -122,6 +106,25 @@
 				return false;
 			}
 		}
+		
+// 		 document.querySelector('#cancel').onclick = function(){
+// 		    	swal({
+// 		    		  title: "是否取消訂單?",
+// 		    		  text: "訂單即將取消!",
+// 		    		  icon: "warning",
+// 		    		  buttons: true,
+// 		    		  dangerMode: true,
+// 		    		})
+// 		    		.then((cancelOK) => {
+// 		    			  if (cancelOK) {
+// 		    			    swal("訂單已取消!", 
+// 		    			    	{icon: "success",});
+// 		    		    	setTimeout(function(){window.location="<c:url value='/04/DeleteOrderlist.ctrl'/>" ; },2000);
+// 		    			  } else {
+// 		    			    swal("動作已取消!");
+// 		    			  }
+// 		    			});
+// 		    };
 	</script>
 
 

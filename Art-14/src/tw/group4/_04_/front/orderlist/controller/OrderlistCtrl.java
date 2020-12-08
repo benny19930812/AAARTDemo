@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import tw.group4._04_.back.cmsAct.model.ShowBean;
 import tw.group4._04_.back.cmsAct.model.ShowBean2;
@@ -104,7 +105,7 @@ public class OrderlistCtrl {
 	}
 	//刪除訂單
 	@RequestMapping(path = "/04/DeleteOrderlist.ctrl", method = RequestMethod.GET)
-	public String processDeleteOrderlist(String orderid,Model model,HttpSession session,HttpServletRequest request) {
+	public  @ResponseBody String processDeleteOrderlist(String orderid,Model model,HttpSession session,HttpServletRequest request) {
 		//直接由orderid取得orderlists
 		List<Orderlist> orderlists = orderlistService.searchOrderid(orderid);
 		orderlist = orderlists.get(0);		
