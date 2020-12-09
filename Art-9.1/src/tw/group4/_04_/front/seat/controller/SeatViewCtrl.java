@@ -14,6 +14,11 @@ public class SeatViewCtrl {
 			
 			return IdentityFilter.loginID+"04/front/Seat/Seat";
 		}
+		@RequestMapping(path = "/04/seatmap", method = RequestMethod.GET)
+		public String processShowSeatmap( ) {
+			
+			return IdentityFilter.loginID+"04/front_Seat/Seat2";
+		}
 	
 
 }
