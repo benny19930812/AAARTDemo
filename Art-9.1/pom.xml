@@ -71,7 +71,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.2.9.RELEASE</version>
+			<version>5.2.20.RELEASE</version>
 		</dependency>
 		<!-- 換成比較多人用的jstl dependency -->
 		<dependency>
